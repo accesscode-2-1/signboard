@@ -115,15 +115,25 @@ public class Main {
         }
     }
 
+//    public static void main(String[] args) {
+//        SignBoard signBoard = new SignBoard(8);
+//
+//        // Run the sign board forever.
+//        while (true) {
+//            ribbonScene(signBoard, 48);
+//            scrollTextScene(signBoard, "###  F A L A F E L  ###");
+//            ribbonScene(signBoard, 48);
+//            flashFreshHotScene(signBoard, 8);
+//        }
+//    }
+
     public static void main(String[] args) {
         SignBoard signBoard = new SignBoard(8);
 
-        // Run the sign board forever.
         while (true) {
-            ribbonScene(signBoard, 48);
-            scrollTextScene(signBoard, "###  F A L A F E L  ###");
-            ribbonScene(signBoard, 48);
-            flashFreshHotScene(signBoard, 8);
+            Emoji.emoji(signBoard);
+            Emoji.Jump(signBoard, 30);
         }
+
     }
 }
