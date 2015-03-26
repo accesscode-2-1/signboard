@@ -50,7 +50,7 @@ public class Main {
         int y = board.getHeight() / 2;
         for (int x = -text.length(); x <= width; ++x) {
             SignBoard.Frame frame = board.newFrame();
-
+            setRandColor(frame);
             if (x >= width)
                 break;
 
@@ -79,7 +79,8 @@ public class Main {
         Random random = new Random();
         int width = board.getWidth();
         int leftPosition = width / 4 - 12;
-        int rightPosition = 3 * width / 4 - 7;
+        int rightPosition = 3 * width / 4 - 17;
+        int centerPosition = width/4;
         int y = board.getHeight() / 2;
 
         for (int i = 0; i < cycles * 2; ++i) {
@@ -96,32 +97,85 @@ public class Main {
             else
                 frame.setYellow();
             // Write a word.
-            if (i % 2 == 0) {
-                frame.write(leftPosition, y - 2, "FFFF RRR  EEEE  SSS H  H");
-                frame.write(leftPosition, y - 1, "F    R RR E    SS   H  H");
-                frame.write(leftPosition, y    , "FFR  RRR  EEE   SS  HHHH");
-                frame.write(leftPosition, y + 1, "F    R R  E      SS H  H");
-                frame.write(leftPosition, y + 2, "F    R  R EEEE SSS  H  H");
+            if (i % 3 == 0) {
+                setRandColor(frame);
+                frame.write(leftPosition, y - 2, " SSS  U   U PPPPP EEEEE RRRRR       ");
+                setRandColor(frame);
+                frame.write(leftPosition, y - 1, "S     U   U P   P E     R   R     ");
+                setRandColor(frame);
+                frame.write(leftPosition, y    , "  SS  U   U PPPPP EEEEE RRRRR     ");
+                setRandColor(frame);
+                frame.write(leftPosition, y + 1, "S   S U   U P     E     RRR        ");
+                setRandColor(frame);
+                frame.write(leftPosition, y + 2, " SSS  UUUUU p     EEEEE R  RR");
             }
-            else {
-                frame.write(rightPosition, y - 2, "H  H  OO  TTTT");
-                frame.write(rightPosition, y - 1, "H  H O  O  TT ");
-                frame.write(rightPosition, y    , "HHHH O  O  TT ");
-                frame.write(rightPosition, y + 1, "H  H O  O  TT ");
-                frame.write(rightPosition, y + 2, "H  H  OO   TT ");
+                else if (i % 3 == 1){
+                setRandColor(frame);
+                frame.write(rightPosition, y - 2, " CCCC  AAAAA  RRRRR  TTTTT");
+                setRandColor(frame);
+                frame.write(rightPosition, y - 1, "C      A   A  R   R    T  ");
+                setRandColor(frame);
+                frame.write(rightPosition, y,     "C      AAAAA  RRRRR    T ");
+                setRandColor(frame);
+                frame.write(rightPosition, y + 1, "C      A   A  RRR      T ");
+                setRandColor(frame);
+                frame.write(rightPosition, y + 2, " CCCC  A   A  R  RR    T ");
             }
+//                else if (i % 2 == 0) {
+//            frame.write(leftPosition, y - 2, " ktflyjfhhjgvjkbgblj/lk/l       ");
+//            frame.write(leftPosition, y - 1, "hn jh ,hj vhkkjhbjbljbjbjbl    ");
+//            frame.write(leftPosition, y    , "  Skjbjbljknlk;klm;;lml;m;l     ");
+//            frame.write(leftPosition, y + 1, "ylgukghlkk;hknbbh hhhhhhguyu       ");
+//            frame.write(leftPosition, y + 2, " SSS  UUUUU p     EEEEE R  RR");
+//            }
+
+             else {
+                setRandColor(frame);
+                frame.write(centerPosition, y - 2, "■■■■■   ■   ■■■■■   ■■■■■ ■■■■■");
+                setRandColor(frame);
+                frame.write(centerPosition, y - 1, "■   ■   ■      ■       ■  ■   ■");
+                setRandColor(frame);
+                frame.write(centerPosition, y,     "■■■■■   ■     ■       ■   ■■■■■");
+                setRandColor(frame);
+                frame.write(centerPosition, y + 1, "■       ■    ■       ■    ■   ■");
+                setRandColor(frame);
+                frame.write(centerPosition, y + 2, "■       ■   ■■■■■   ■■■■■ ■   ■");
+
+             }
 
             frame.finish(0.25);
         }
     }
+    public static void setRandColor(SignBoard.Frame frame){
 
+//        Random randomGenerator = new Random();
+//        int random = randomGenerator.nextInt(4);
+
+        int random = (int)(Math.random() * 3);
+
+        if(random == 0){
+            frame.setGreen();
+        }
+        else if(random == 1){
+            frame.setRed();
+        }
+        else if(random == 2){
+            frame.setWhite();
+        }
+        else {
+            frame.setYellow();
+        }
+    }
     public static void main(String[] args) {
         SignBoard signBoard = new SignBoard(8);
 
         // Run the sign board forever.
         while (true) {
             ribbonScene(signBoard, 48);
-            scrollTextScene(signBoard, "###  F A L A F E L  ###");
+
+            scrollTextScene(signBoard, "~~~~~ ⚡⚡⚡ ★✮★★★★ < SUPER CART > ★★★★★★ ⚡⚡⚡ ~~~~~~");
+            //scrollTextScene(signBoard, "###  SUPER CART  ###");
+            //scrollTextScene(signBoard, "###  SUPER CART  ###");
             ribbonScene(signBoard, 48);
             flashFreshHotScene(signBoard, 8);
         }
