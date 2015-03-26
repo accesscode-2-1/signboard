@@ -10,6 +10,7 @@ public class Main {
      * @param numCycles
      *   The number of cycles to draw for.
      */
+
     public static void ribbonScene(SignBoard board, int numCycles) {
         int width = board.getWidth();
         int height = board.getHeight();
@@ -35,6 +36,64 @@ public class Main {
             }
 
             frame.finish(0.02);
+        }
+    }
+
+    public static void foodScene(SignBoard board, int numCycles) {
+        int width = board.getWidth();
+        int height = board.getHeight();
+        int x = 0;
+        int y = 0;
+        int xOffset = 1;
+        int yOffset = 1;
+        String text =  "■     ■   ■ ■ ■   ■      ■ ■ ■  ■   ■  ■ ■ ■   ■ ■ ■  ■ ■ ■  ■ ■ ■  ■ ■";
+        String text1 = "■     ■   ■       ■      ■   ■  ■   ■  ■       ■      ■   ■  ■   ■  ■  ■";
+        String text2 = "■  ■  ■   ■ ■     ■      ■   ■  ■   ■  ■ ■     ■ ■    ■   ■  ■   ■  ■   ■";
+        String text3 = "■  ■  ■   ■       ■      ■   ■  ■   ■  ■       ■      ■   ■  ■   ■  ■  ■ ";
+        String text4 = " ■ ■ ■    ■ ■ ■   ■ ■ ■  ■ ■ ■   ■ ■   ■ ■ ■   ■      ■ ■ ■  ■ ■ ■  ■ ■";
+
+        for (int i = 0; i < numCycles; ++i) {
+            SignBoard.Frame frame = board.newFrame();
+
+
+            setRandColor(frame);
+            frame.write(x,y,text);
+            setRandColor(frame);
+            frame.write(x,y+1,text1);
+            setRandColor(frame);
+            frame.write(x,y+2,text2);
+            setRandColor(frame);
+            frame.write(x,y+3,text3);
+            setRandColor(frame);
+            frame.write(x,y+4,text4);
+
+            y+=yOffset;
+            if(y > 3) {
+                yOffset = -1;
+                y+=yOffset;
+            }
+            if(y < 0) {
+                yOffset = 1;
+                y+=yOffset;
+            }
+            x+=xOffset;
+            if(x > width - text2.length()){
+                xOffset = -1;
+                x+=xOffset;
+            }
+            if(x < 0){
+                xOffset = 1;
+                x+=xOffset;
+            }
+
+
+
+
+
+
+
+
+            frame.finish(0.05);
         }
     }
 
@@ -176,6 +235,7 @@ public class Main {
             scrollTextScene(signBoard, "~~~~~ ⚡⚡⚡ ★✮★★★★ < SUPER CART > ★★★★★★ ⚡⚡⚡ ~~~~~~");
             //scrollTextScene(signBoard, "###  SUPER CART  ###");
             //scrollTextScene(signBoard, "###  SUPER CART  ###");
+            foodScene(signBoard, 200);
             ribbonScene(signBoard, 48);
             flashFreshHotScene(signBoard, 8);
         }
