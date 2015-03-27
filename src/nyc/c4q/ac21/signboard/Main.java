@@ -131,8 +131,12 @@ public class Main {
         SignBoard signBoard = new SignBoard(8);
 
         while (true) {
+            Price.printAndroid(signBoard);
+            Price.printPrice(signBoard, 10);
+            Price.androidLeaving(signBoard);
+
             Emoji.emoji(signBoard);
-            Emoji.Jump(signBoard, 30);
+            Emoji.Jump(signBoard, 50);
         }
 
     }
