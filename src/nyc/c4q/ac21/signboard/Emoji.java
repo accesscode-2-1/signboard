@@ -59,6 +59,7 @@ public class Emoji {
             int jump = random.nextInt(2);
             int length = 20;
 
+            frame.setGreen();
             frame.write(0, y - 3 - jump, left1.substring(length - i));
             frame.write(0, y - 2 - jump, left2.substring(length - i));
             frame.write(0, y - 1 - jump, left3.substring(length - i));
@@ -91,6 +92,7 @@ public class Emoji {
         for (int i = 0; i <= numCycles; ++i) {
             SignBoard.Frame frame = board.newFrame();
             int jump = random.nextInt(2);
+            frame.setGreen();
 
             // left jump with randomized number
             if (jump == 1) {

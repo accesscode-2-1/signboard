@@ -30,7 +30,7 @@ public class Price {
                 frame.write(x, y + 3, "     @@ @@    ");
 
             }
-            frame.finish(0.1);
+            frame.finish(0.04);
         }
     }
 
@@ -68,9 +68,9 @@ public class Price {
                 frame.write(width - 30, y - 1, " $$$$$   $$$$$ $$$$$");
                 frame.write(width - 30, y, "   $$    $   $ $   $");
                 frame.write(width - 30, y + 1, "  $$     $   $ $   $");
-                frame.write(width - 30, y + 2, " $$  $$  $$$$$ $$$$$");
+                frame.write(width - 30, y + 2, " $$   $$ $$$$$ $$$$$");
             }
-            frame.finish(0.60);
+            frame.finish(0.6);
 
 
         }
@@ -92,7 +92,7 @@ public class Price {
             frame.write(x, y + 1, "@@ @@@@@@@@ @@");
             frame.write(x, y + 2, "   @@@@@@@@   ");
             frame.write(x, y + 3, "     @@ @@    ");
-            frame.finish(0.05);
+            frame.finish(0.04);
 
         }
     }

@@ -132,7 +132,7 @@ public class Main {
 
         while (true) {
             Price.printAndroid(signBoard);
-            Price.printPrice(signBoard, 10);
+            Price.printPrice(signBoard, 6);
             Price.androidLeaving(signBoard);
 
             Emoji.emoji(signBoard);
