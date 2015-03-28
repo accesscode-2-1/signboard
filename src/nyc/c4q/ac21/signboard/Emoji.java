@@ -4,7 +4,10 @@ import java.util.Random;
 
 /**
  * Created by sufeizhao on 3/22/15.
+ * Emoji.java
+ * Emoji slide with jumping emojis and moving waffle
  */
+
 public class Emoji {
 
     static String left1 = "     ,- *^^* -,     ";
@@ -44,7 +47,8 @@ public class Emoji {
     static String waffle3 = " |■ ■ ■|  ";
     static String waffle4 = "  \\■ ■/  ";
 
-    // enter emoji
+
+    // enter emoji from left and right
     public static void emoji(SignBoard board) {
         Random random = new Random();
         int width = board.getWidth();
@@ -75,19 +79,20 @@ public class Emoji {
         }
     }
 
-    // emoji jumps. length of string = 20
+    // emoji jumps at set position
     public static void Jump(SignBoard board, int numCycles) {
         Random random = new Random();
         int width = board.getWidth();
         int y = board.getHeight() / 2;
-        int waffley = 4, offsety = 0;
         int length = 20;
+        int wafflex = 23, offsetx = 0, waffley = 4, offsety = 0;
+        int yumx = width - 30, yumOffx = 0;
 
         for (int i = 0; i <= numCycles; ++i) {
             SignBoard.Frame frame = board.newFrame();
             int jump = random.nextInt(2);
 
-            // left jump
+            // left jump with randomized number
             if (jump == 1) {
                 frame.write(1, y - 3 - jump, leftJump1);
                 frame.write(1, y - 2 - jump, leftJump2);
@@ -106,7 +111,7 @@ public class Emoji {
                 frame.write(1, y + 3 - jump, left7);
             }
 
-            // right jump
+            // right jump with randomized number
             if (jump == 1) {
                 frame.write(width - length, y - 3 - jump, rightJump1);
                 frame.write(width - length, y - 2 - jump, rightJump2);
@@ -125,20 +130,53 @@ public class Emoji {
                 frame.write(width - length, y + 3 - jump, right7);
             }
 
-            // waffle
-            frame.write(length + 3, waffley, waffle1);
-            frame.write(length + 3, waffley + 1, waffle2);
-            frame.write(length + 3, waffley + 2, waffle3);
-            frame.write(length + 3, waffley + 3, waffle4);
+            // waffle moves around board
+            frame.setYellow();
+            frame.write(wafflex, waffley, waffle1);
+            frame.write(wafflex, waffley + 1, waffle2);
+            frame.write(wafflex, waffley + 2, waffle3);
+            frame.write(wafflex, waffley + 3, waffle4);
 
-            if (waffley < 1) {
+            if (wafflex <= 23) {
+                offsetx = 3;
+                wafflex += offsetx;
+            } else if (wafflex >= width - 30) {
+                offsetx = -3;
+                wafflex += offsetx;
+            } else if (wafflex > 23 && wafflex < width - 30) {
+                wafflex += offsetx;
+            }
+
+            if (waffley < 2) {
                 offsety = 1;
                 waffley += offsety;
             } else if (waffley > 3) {
                 offsety = -1;
                 waffley += offsety;
-            } else if (waffley <= 3 && waffley >= 1) {
+            } else if (waffley <= 3 && waffley >= 2) {
                 waffley += offsety;
+            }
+
+            // "YUM" scrolls across board
+            int color = random.nextInt(4);
+            if (color == 0)
+                frame.setGreen();
+            else if (color == 1)
+                frame.setRed();
+            else if (color == 2)
+                frame.setWhite();
+            else
+                frame.setYellow();
+
+            frame.write(yumx, 0, "~ YUMMY! ~");
+            if (yumx <= 23) {
+                yumOffx = 3;
+                yumx += yumOffx;
+            } else if (yumx >= width - 30) {
+                yumOffx = -3;
+                yumx += yumOffx;
+            } else if (yumx > 23 && yumx < width - 30) {
+                yumx += yumOffx;
             }
 
             frame.finish(0.13);
