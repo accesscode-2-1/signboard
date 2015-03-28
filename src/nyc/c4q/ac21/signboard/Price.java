@@ -92,7 +92,7 @@ public class Price {
             frame.write(x, y + 1, "@@ @@@@@@@@ @@");
             frame.write(x, y + 2, "   @@@@@@@@   ");
             frame.write(x, y + 3, "     @@ @@    ");
-            frame.finish(0.08);
+            frame.finish(0.05);
 
         }
     }

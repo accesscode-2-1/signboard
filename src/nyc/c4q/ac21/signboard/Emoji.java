@@ -43,7 +43,7 @@ public class Emoji {
         Random random = new Random();
         int width = board.getWidth();
         int y = board.getHeight() / 2;
-        int waffley = 4, offsety;
+        int waffley = 4, offsety = 0;
 
         for (int i = 0; i <= numCycles; ++i) {
             SignBoard.Frame frame = board.newFrame();
@@ -90,12 +90,14 @@ public class Emoji {
             frame.write(25, waffley + 2, " |■ ■ ■|  ");
             frame.write(25, waffley + 3, "  \\■ ■/  ");
 
-            if (y < 1) {
+            if (waffley < 1) {
                 offsety = 1;
-                y += offsety;
-            } else if (y > 3) {
+                waffley += offsety;
+            } else if (waffley > 3) {
                 offsety = -1;
-                y += offsety;
+                waffley += offsety;
+            } else if (waffley <= 3 && waffley >= 1) {
+                waffley += offsety;
             }
 
             frame.finish(0.13);
