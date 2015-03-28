@@ -23,6 +23,27 @@ public class Emoji {
     static String right6 = "    \\          /    ";
     static String right7 = "     '-v   v--'     ";
 
+    static String leftJump1 = " *   ,- *^^* -, *   ";
+    static String leftJump2 = "*  */          \\    ";
+    static String leftJump3 = "   /    /\\  /\\  \\ * ";
+    static String leftJump4 = "* |  \\    ___   \\'  ";
+    static String leftJump5 = "   \\  \\_  \\_/   /\\_  ";
+    static String leftJump6 = " *  \\          / *  ";
+    static String leftJump7 = "*    '--v   v-'     ";
+
+    static String rightJump1 = " *  *,- *^^* -,  *  ";
+    static String rightJump2 = " *  /          \\   *";
+    static String rightJump3 = "   /  /\\  /\\    \\   ";
+    static String rightJump4 = "  '/   ___    /  | *";
+    static String rightJump5 = " _/\\   \\_/  _/  /   ";
+    static String rightJump6 = "    \\          /    ";
+    static String rightJump7 = "*    '-v   v--'  *  ";
+
+    static String waffle1 = "   __  ";
+    static String waffle2 = "  /■ ■\\  ";
+    static String waffle3 = " |■ ■ ■|  ";
+    static String waffle4 = "  \\■ ■/  ";
+
     // enter emoji
     public static void emoji(SignBoard board) {
         Random random = new Random();
@@ -66,14 +87,15 @@ public class Emoji {
             SignBoard.Frame frame = board.newFrame();
             int jump = random.nextInt(2);
 
+            // left jump
             if (jump == 1) {
-                frame.write(1, y - 3 - jump, " *   ,- *^^* -, *   ");
-                frame.write(1, y - 2 - jump, "*  */          \\    ");
-                frame.write(1, y - 1 - jump, "   /    /\\  /\\  \\ * ");
-                frame.write(1, y - jump, "* |  \\    ___   \\'  ");
-                frame.write(1, y + 1 - jump, "   \\  \\_  \\_/   /\\_  ");
-                frame.write(1, y + 2 - jump, " *  \\          / *  ");
-                frame.write(1, y + 3 - jump, "*    '--v   v-'     ");
+                frame.write(1, y - 3 - jump, leftJump1);
+                frame.write(1, y - 2 - jump, leftJump2);
+                frame.write(1, y - 1 - jump, leftJump3);
+                frame.write(1, y - jump, leftJump4);
+                frame.write(1, y + 1 - jump, leftJump5);
+                frame.write(1, y + 2 - jump, leftJump6);
+                frame.write(1, y + 3 - jump, leftJump7);
             } else {
                 frame.write(1, y - 3 - jump, left1);
                 frame.write(1, y - 2 - jump, left2);
@@ -84,14 +106,15 @@ public class Emoji {
                 frame.write(1, y + 3 - jump, left7);
             }
 
+            // right jump
             if (jump == 1) {
-                frame.write(width - length, y - 3 - jump, " *  *,- *^^* -,  *  ");
-                frame.write(width - length, y - 2 - jump, " *  /          \\   *");
-                frame.write(width - length, y - 1 - jump, "   /  /\\  /\\    \\   ");
-                frame.write(width - length, y - jump, "  '/   ___    /  | *");
-                frame.write(width - length, y + 1 - jump, " _/\\   \\_/  _/  /   ");
-                frame.write(width - length, y + 2 - jump, "    \\          /    ");
-                frame.write(width - length, y + 3 - jump, "*    '-v   v--'  *  ");
+                frame.write(width - length, y - 3 - jump, rightJump1);
+                frame.write(width - length, y - 2 - jump, rightJump2);
+                frame.write(width - length, y - 1 - jump, rightJump3);
+                frame.write(width - length, y - jump, rightJump4);
+                frame.write(width - length, y + 1 - jump, rightJump5);
+                frame.write(width - length, y + 2 - jump, rightJump6);
+                frame.write(width - length, y + 3 - jump, rightJump7);
             } else {
                 frame.write(width - length, y - 3 - jump, right1);
                 frame.write(width - length, y - 2 - jump, right2);
@@ -102,10 +125,11 @@ public class Emoji {
                 frame.write(width - length, y + 3 - jump, right7);
             }
 
-            frame.write(length + 3, waffley, "   __  ");
-            frame.write(length + 3, waffley + 1, "  /■ ■\\  ");
-            frame.write(length + 3, waffley + 2, " |■ ■ ■|  ");
-            frame.write(length + 3, waffley + 3, "  \\■ ■/  ");
+            // waffle
+            frame.write(length + 3, waffley, waffle1);
+            frame.write(length + 3, waffley + 1, waffle2);
+            frame.write(length + 3, waffley + 2, waffle3);
+            frame.write(length + 3, waffley + 3, waffle4);
 
             if (waffley < 1) {
                 offsety = 1;
