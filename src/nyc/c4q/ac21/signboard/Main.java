@@ -120,10 +120,8 @@ public class Main {
 
         // Run the sign board forever.
         while (true) {
-            ribbonScene(signBoard, 48);
-            scrollTextScene(signBoard, "###  F A L A F E L  ###");
-            ribbonScene(signBoard, 48);
-            flashFreshHotScene(signBoard, 8);
+            WaffleText.printWaffleDanceScene(signBoard, 6);
+            WaffleText.shakeWaffleText(signBoard, 10);
         }
     }
 }
