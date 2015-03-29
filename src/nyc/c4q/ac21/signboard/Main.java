@@ -26,20 +26,20 @@ public class Main {
                 if (y >= height)
                     y = 2 * height - y - 2;
                 if (0 < x) {
-                    frame.setYellow();
-                    frame.write(x, y, "*");
+                    frame.setGreen();
+                    frame.write(x, y, "+");
                 }
                 if (0 < x + 1 && x + 1 < width) {
-                    frame.setGreen();
-                    frame.write(x + 1, y, "*");
+                    frame.setYellow();
+                    frame.write(x + 1, y, "-");
                 }
                 if (x + 2 < width) {
                     frame.setRed();
-                    frame.write(x + 2, y, "*");
+                    frame.write(x + 2, y, ":");
                 }
             }
 
-            frame.finish(0.02);
+            frame.finish(0.10);
         }
     }
 
@@ -137,7 +137,7 @@ public class Main {
             ribbonScene(signBoard, 48);
             scrollTextScene(signBoard, "~~~~~~~~~~~GET THEM WHILE THEY'RE HOT!!!~~~~~~~~~~~");
             ribbonScene(signBoard, 48);
-            flashFreshHotScene(signBoard, 10);
+            flashFreshHotScene(signBoard, 8);
         }
     }
 }
