@@ -33,8 +33,8 @@ public class Emoji {
     static String leftJump3 = "   /    /\\  /\\  \\ * ";
     static String leftJump4 = "* |  \\    ___   \\'  ";
     static String leftJump5 = "   \\  \\_  \\_/   /\\_  ";
-    static String leftJump6 = " *  \\          / *  ";
-    static String leftJump7 = "*    '--v   v-'     ";
+    static String leftJump6 = " *  \\          /   ";
+    static String leftJump7 = "*    '--v   v-'  *  ";
 
     static String rightJump1 = " *  *,- *^^* -,  *  ";
     static String rightJump2 = " *  /          \\   *";
@@ -44,10 +44,10 @@ public class Emoji {
     static String rightJump6 = "    \\          /    ";
     static String rightJump7 = "*    '-v   v--'  *  ";
 
-    static String waffle1 = "   __  ";
-    static String waffle2 = "  /■ ■\\  ";
-    static String waffle3 = " |■ ■ ■|  ";
-    static String waffle4 = "  \\■ ■/  ";
+    static String waffle1 = "  _____  ";
+    static String waffle2 = " |■ ■ ■| ";
+    static String waffle3 = " |■ ■ ■| ";
+    static String waffle4 = " |■ ■ ■| ";
 
 
     // enter emoji from left and right
@@ -65,7 +65,7 @@ public class Emoji {
             frame.write(0, y - 3 - jump, left1.substring(length - i));
             frame.write(0, y - 2 - jump, left2.substring(length - i));
             frame.write(0, y - 1 - jump, left3.substring(length - i));
-            frame.write(0, y - jump, left4.substring(length - i));
+            frame.write(0, y - jump,     left4.substring(length - i));
             frame.write(0, y + 1 - jump, left5.substring(length - i));
             frame.write(0, y + 2 - jump, left6.substring(length - i));
             frame.write(0, y + 3 - jump, left7.substring(length - i));
@@ -73,7 +73,7 @@ public class Emoji {
             frame.write(width - i, y - 3 - jump, right1.substring(0, i));
             frame.write(width - i, y - 2 - jump, right2.substring(0, i));
             frame.write(width - i, y - 1 - jump, right3.substring(0, i));
-            frame.write(width - i, y - jump, right4.substring(0, i));
+            frame.write(width - i, y - jump,     right4.substring(0, i));
             frame.write(width - i, y + 1 - jump, right5.substring(0, i));
             frame.write(width - i, y + 2 - jump, right6.substring(0, i));
             frame.write(width - i, y + 3 - jump, right7.substring(0, i));
@@ -101,7 +101,7 @@ public class Emoji {
                 frame.write(1, y - 3 - jump, leftJump1);
                 frame.write(1, y - 2 - jump, leftJump2);
                 frame.write(1, y - 1 - jump, leftJump3);
-                frame.write(1, y - jump, leftJump4);
+                frame.write(1, y - jump,     leftJump4);
                 frame.write(1, y + 1 - jump, leftJump5);
                 frame.write(1, y + 2 - jump, leftJump6);
                 frame.write(1, y + 3 - jump, leftJump7);
@@ -109,7 +109,7 @@ public class Emoji {
                 frame.write(1, y - 3 - jump, left1);
                 frame.write(1, y - 2 - jump, left2);
                 frame.write(1, y - 1 - jump, left3);
-                frame.write(1, y - jump, left4);
+                frame.write(1, y - jump,     left4);
                 frame.write(1, y + 1 - jump, left5);
                 frame.write(1, y + 2 - jump, left6);
                 frame.write(1, y + 3 - jump, left7);
@@ -120,7 +120,7 @@ public class Emoji {
                 frame.write(width - length, y - 3 - jump, rightJump1);
                 frame.write(width - length, y - 2 - jump, rightJump2);
                 frame.write(width - length, y - 1 - jump, rightJump3);
-                frame.write(width - length, y - jump, rightJump4);
+                frame.write(width - length, y - jump,     rightJump4);
                 frame.write(width - length, y + 1 - jump, rightJump5);
                 frame.write(width - length, y + 2 - jump, rightJump6);
                 frame.write(width - length, y + 3 - jump, rightJump7);
@@ -128,7 +128,7 @@ public class Emoji {
                 frame.write(width - length, y - 3 - jump, right1);
                 frame.write(width - length, y - 2 - jump, right2);
                 frame.write(width - length, y - 1 - jump, right3);
-                frame.write(width - length, y - jump, right4);
+                frame.write(width - length, y - jump,     right4);
                 frame.write(width - length, y + 1 - jump, right5);
                 frame.write(width - length, y + 2 - jump, right6);
                 frame.write(width - length, y + 3 - jump, right7);
@@ -136,7 +136,7 @@ public class Emoji {
 
             // waffle moves around board
             frame.setYellow();
-            frame.write(wafflex, waffley, waffle1);
+            frame.write(wafflex, waffley,     waffle1);
             frame.write(wafflex, waffley + 1, waffle2);
             frame.write(wafflex, waffley + 2, waffle3);
             frame.write(wafflex, waffley + 3, waffle4);
