@@ -148,7 +148,10 @@ public class Main {
             Price.androidLeaving(signBoard);
 
             FoodToppings.toppings(signBoard);
-            FoodToppings.toppingsOneLine(signBoard);
+
+            Pacman.pacmanEnter(signBoard);
+            Pacman.eatTopping(signBoard);
+            Pacman.pacmanExit(signBoard);
         }
 
     }

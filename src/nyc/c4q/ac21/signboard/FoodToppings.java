@@ -233,26 +233,4 @@ public class FoodToppings {
         }
 
     }
-
-    public static void toppingsOneLine(SignBoard board) {
-        int width = board.getWidth();
-        int x = board.getWidth() / 5 + 5;
-        int y = board.getHeight() / 2;
-
-        for (int i = 0; i < width; i++) {
-            SignBoard.Frame frame = board.newFrame();
-
-            frame.setGreen();
-            if (i<48) {
-                frame.write(x + i, y - 3, "  ___  ___  ___  ___  ___.---------------.      ".substring(i));
-                frame.write(x + i, y - 2, " .'\\__\\'\\__\\'\\__\\'\\__\\'\\__,`   .  ____ ___ \\    ".substring(i));
-                frame.write(x + i, y - 1, " \\\\/ __\\/ __\\/ __\\/ __\\/ _:\\   |`.  \\  \\___ \\   ".substring(i));
-                frame.write(x + i, y,     "  \\\\'\\__\\'\\__\\'\\__\\'\\__\\'\\_`.__|\"\"`. \\  \\___ \\  ".substring(i));
-                frame.write(x + i, y + 1, "   \\\\/ __\\/ __\\/ __\\/ __\\/ __:                \\ ".substring(i));
-                frame.write(x + i, y + 2, "    \\\\'\\__\\'\\__\\'\\__\\ \\__\\'\\_;-----------------`".substring(i));
-                frame.write(x + i, y + 3, "     \\\\/___\\/___\\/___\\/___\\/ :_________________|".substring(i));
-            }
-            frame.finish(0.15);
-        }
-    }
 }

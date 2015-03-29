@@ -3,11 +3,9 @@ package nyc.c4q.ac21.signboard;
 import java.util.Random;
 
 /**
- * Created by sufeizhao on 3/22/15.
+ * Created by Sufei on 3/22/15.
  * Emoji.java
  * Emoji slide with jumping emojis and moving waffle
- *
- * Thanks to Anthony Fermina for the offset waffle code.
  */
 
 public class Emoji {
