@@ -115,15 +115,44 @@ public class Main {
         }
     }
 
+//    public static void main(String[] args) {
+//        SignBoard signBoard = new SignBoard(8);
+//
+//        // Run the sign board forever.
+//        while (true) {
+//            ribbonScene(signBoard, 48);
+//            scrollTextScene(signBoard, "###  F A L A F E L  ###");
+//            ribbonScene(signBoard, 48);
+//            flashFreshHotScene(signBoard, 8);
+//        }
+//    }
+
     public static void main(String[] args) {
         SignBoard signBoard = new SignBoard(8);
 
-        // Run the sign board forever.
         while (true) {
-            ribbonScene(signBoard, 48);
-            scrollTextScene(signBoard, "###  F A L A F E L  ###");
-            ribbonScene(signBoard, 48);
-            flashFreshHotScene(signBoard, 8);
+            WaffleText.printWaffleDanceScene(signBoard, 6);
+            WaffleText.shakeWaffleText(signBoard, 10);
+
+            Emoji.emoji(signBoard);
+            Emoji.Jump(signBoard, 40);
+
+            Menu.menuScene(signBoard);
+            Menu.flashApps(signBoard, 2);
+            Menu.flashChoc(signBoard, 2);
+            Menu.flashApps(signBoard, 2);
+            Menu.flashChoc(signBoard, 2);
+
+            Price.printAndroid(signBoard);
+            Price.printPrice(signBoard, 6);
+            Price.androidLeaving(signBoard);
+
+            FoodToppings.toppings(signBoard);
+
+            Pacman.pacmanEnter(signBoard);
+            Pacman.eatTopping(signBoard);
+            Pacman.pacmanExit(signBoard);
         }
+
     }
 }
