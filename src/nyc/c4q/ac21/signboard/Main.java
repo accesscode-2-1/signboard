@@ -205,6 +205,54 @@ public class Main {
             frame.finish(0.25);
         }
     }
+
+    public static void dancingSuperCart(SignBoard board, int cycles) {
+        Random random = new Random();
+        int width = board.getWidth();
+        int left = 0;
+        int right = 0;
+        int y = 0;
+
+        for (int i = 0; i < cycles; ++i) {
+            SignBoard.Frame frame = board.newFrame();
+
+            // Choose a color at random.
+            int color = random.nextInt(4);
+            if (color == 0)
+                frame.setGreen();
+            else if (color == 1)
+                frame.setRed();
+            else if (color == 2)
+                frame.setWhite();
+            else
+                frame.setYellow();
+
+            int d = random.nextInt(3);
+
+            frame.write(left + d, right+1, "  ____      _   _   ____   U _____ u   ____      ____     _       ____     _____                 ");
+            frame.write(left + d, right+2, " / __ | uU | | | |U|  _ \\ u\\| ___ |/U |  _ \\ uU / ___|U  / \\  uU |  _ \\ u |_   _|  ");
+            frame.write(left + d, right+3, "<\\___ \\/  \\| | | |\\| |_) |/ |  _|\"   \\| |_) |/\\| |     \\/ _ \\/  \\| |_) |/   | |       ");
+            frame.write(left + d, right+4, " u___) |   | |_| | |  __/   | |___    |  _ <   | |___  / ___ \\   |  _ <    /| |\\               ");
+            frame.write(left + d, right+5, " |____/>> <<\\___/  |_|      |_____|   |_| \\_\\   \\____|/_/   \\_\\  |_| \\_\\  u |_|U         ");
+            frame.write(left + d, right+6, "  )(  (__|__) )(   ||>>     <<   >>   //   \\\\_ _// \\\\  ||    >>  //   \\\\_ _// \\\\_      ");
+            frame.write(left + d, right+7, " (__)        (__) (__)__)  (__) (__) (__)  (__|__)(__)(__)  (__)(__)  (__|__) (__)               ");
+
+            frame.finish(0.3);
+
+            frame = board.newFrame();
+            frame.write(left + d, right+1, "  ____      _   _   ____     _____     ____      ____     _       ____     _____                 ");
+            frame.write(left + d, right+2, " / __ |    | | | | |  _ \\   | ___ |   |  _ \\    / ___|   / \\     |  _ \\   |_   _|  ");
+            frame.write(left + d, right+3, "/\\___ \\__O_| | | | | |_) | /|  _|\\   /| |_) |__| |  U___/ _ \\_O__| |_) |__o | | u     ");
+            frame.write(left + d, right+4, "  ___) |   | |_| |/|  __/\\U | |___\\  U|  _ <   | |___  / ___ \\   |  _ <  U__| |/               ");
+            frame.write(left + d, right+5, " |____/   //\\___/ U|_|   U  |_____| u |_| \\_\\ <<\\____|/_/   \\_\\  |_| \\_\\    |_|          ");
+            frame.write(left + d, right+6, "  )( \\\\   ||  \\\\  // \\\\_    //   \\\\  _//   )( (_)  \\\\ //   _//  _<<  _>>   << \\\\_      ");
+            frame.write(left + d, right+7, " (__|__)(__)  (__)(_) (__) (__) (__)(__)  (__)    (__|__) (__) (__) (__)   (__|__)               ");
+
+            frame.finish(0.3);
+        }
+    }
+
+
     public static void setRandColor(SignBoard.Frame frame){
 
 //        Random randomGenerator = new Random();
@@ -237,7 +285,9 @@ public class Main {
             //scrollTextScene(signBoard, "###  SUPER CART  ###");
             foodScene(signBoard, 200);
             ribbonScene(signBoard, 48);
+            dancingSuperCart(signBoard, 18);
             flashFreshHotScene(signBoard, 8);
+
         }
     }
 }
