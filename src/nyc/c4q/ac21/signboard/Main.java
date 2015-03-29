@@ -131,12 +131,15 @@ public class Main {
         SignBoard signBoard = new SignBoard(8);
 
         while (true) {
+            WaffleText.printWaffleDanceScene(signBoard, 6);
+            WaffleText.shakeWaffleText(signBoard, 10);
+
             Price.printAndroid(signBoard);
             Price.printPrice(signBoard, 6);
             Price.androidLeaving(signBoard);
 
             Emoji.emoji(signBoard);
-            Emoji.Jump(signBoard, 50);
+            Emoji.Jump(signBoard, 30);
         }
 
     }

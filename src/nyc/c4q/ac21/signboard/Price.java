@@ -1,5 +1,11 @@
 package nyc.c4q.ac21.signboard;
 
+/**
+ * Created by Yuliya on 3/28/15.
+ * Price.java
+ * Enters android figure and displays price
+ */
+
 public class Price {
 
     public static void printAndroid(SignBoard board) {
@@ -30,7 +36,7 @@ public class Price {
                 frame.write(x, y + 3, "     @@ @@    ");
 
             }
-            frame.finish(0.04);
+            frame.finish(0.05);
         }
     }
 
@@ -92,7 +98,7 @@ public class Price {
             frame.write(x, y + 1, "@@ @@@@@@@@ @@");
             frame.write(x, y + 2, "   @@@@@@@@   ");
             frame.write(x, y + 3, "     @@ @@    ");
-            frame.finish(0.04);
+            frame.finish(0.05);
 
         }
     }
