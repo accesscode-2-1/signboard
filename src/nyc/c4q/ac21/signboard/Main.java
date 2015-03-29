@@ -134,6 +134,12 @@ public class Main {
             WaffleText.printWaffleDanceScene(signBoard, 6);
             WaffleText.shakeWaffleText(signBoard, 10);
 
+            //Menu.menuScene(signBoard);
+            Menu.flashApps(signBoard, 6);
+            Menu.flashChoc(signBoard, 6);
+            Menu.flashApps(signBoard, 6);
+            Menu.flashChoc(signBoard, 6);
+
             Price.printAndroid(signBoard);
             Price.printPrice(signBoard, 6);
             Price.androidLeaving(signBoard);

@@ -6,6 +6,8 @@ import java.util.Random;
  * Created by sufeizhao on 3/22/15.
  * Emoji.java
  * Emoji slide with jumping emojis and moving waffle
+ *
+ * Thanks to Anthony Fermina for the offset waffle code.
  */
 
 public class Emoji {

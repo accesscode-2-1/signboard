@@ -13,7 +13,7 @@ public class WaffleText {
     public static void printWaffleDanceScene(SignBoard board, int cycles) {
 
         Random random = new Random();
-        int width = board.getWidth();
+        int width = board.getWidth() / 2;
         int y = board.getHeight() / 2;
 
         for (int i = 0; i < cycles * 2; ++i) {
@@ -27,19 +27,19 @@ public class WaffleText {
                 frame.setWhite();
 
             if (i % 2 == 0) {
-                frame.write(5, y - 3, "╔═╦═╦═╦═╗           ╔═╦═╦═╦═╗           ╔═╦═╦═╦═╗           ╔═╦═╦═╦═╗");
-                frame.write(5, y - 2, "╠═╬═╬═╬═╣ ╔═╦═╦═╦═╗ ╠═╬═╬═╬═╣ ╔═╦═╦═╦═╗ ╠═╬═╬═╬═╣ ╔═╦═╦═╦═╗ ╠═╬═╬═╬═╣");
-                frame.write(5, y - 1, "╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣");
-                frame.write(5, y    , "╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣");
-                frame.write(5, y + 1, "╚═╩═╩═╩═╝ ╠═╬═╬═╬═╣ ╚═╩═╩═╩═╝ ╠═╬═╬═╬═╣ ╚═╩═╩═╩═╝ ╠═╬═╬═╬═╣ ╚═╩═╩═╩═╝");
-                frame.write(5, y + 2, "          ╚═╩═╩═╩═╝           ╚═╩═╩═╩═╝           ╚═╩═╩═╩═╝          ");
+                frame.write(width - 35, y - 3, "╔═╦═╦═╦═╗           ╔═╦═╦═╦═╗           ╔═╦═╦═╦═╗           ╔═╦═╦═╦═╗");
+                frame.write(width - 35, y - 2, "╠═╬═╬═╬═╣ ╔═╦═╦═╦═╗ ╠═╬═╬═╬═╣ ╔═╦═╦═╦═╗ ╠═╬═╬═╬═╣ ╔═╦═╦═╦═╗ ╠═╬═╬═╬═╣");
+                frame.write(width - 35, y - 1, "╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣");
+                frame.write(width - 35, y    , "╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣");
+                frame.write(width - 35, y + 1, "╚═╩═╩═╩═╝ ╠═╬═╬═╬═╣ ╚═╩═╩═╩═╝ ╠═╬═╬═╬═╣ ╚═╩═╩═╩═╝ ╠═╬═╬═╬═╣ ╚═╩═╩═╩═╝");
+                frame.write(width - 35, y + 2, "          ╚═╩═╩═╩═╝           ╚═╩═╩═╩═╝           ╚═╩═╩═╩═╝          ");
             } else {
-                frame.write(5, y - 3, "          ╔═╦═╦═╦═╗           ╔═╦═╦═╦═╗           ╔═╦═╦═╦═╗          ");
-                frame.write(5, y - 2, "╔═╦═╦═╦═╗ ╠═╬═╬═╬═╣ ╔═╦═╦═╦═╗ ╠═╬═╬═╬═╣ ╔═╦═╦═╦═╗ ╠═╬═╬═╬═╣ ╔═╦═╦═╦═╗");
-                frame.write(5, y - 1, "╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣");
-                frame.write(5, y    , "╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣");
-                frame.write(5, y + 1, "╠═╬═╬═╬═╣ ╚═╩═╩═╩═╝ ╠═╬═╬═╬═╣ ╚═╩═╩═╩═╝ ╠═╬═╬═╬═╣ ╚═╩═╩═╩═╝ ╠═╬═╬═╬═╣");
-                frame.write(5, y + 2, "╚═╩═╩═╩═╝           ╚═╩═╩═╩═╝           ╚═╩═╩═╩═╝           ╚═╩═╩═╩═╝");
+                frame.write(width - 35, y - 3, "          ╔═╦═╦═╦═╗           ╔═╦═╦═╦═╗           ╔═╦═╦═╦═╗          ");
+                frame.write(width - 35, y - 2, "╔═╦═╦═╦═╗ ╠═╬═╬═╬═╣ ╔═╦═╦═╦═╗ ╠═╬═╬═╬═╣ ╔═╦═╦═╦═╗ ╠═╬═╬═╬═╣ ╔═╦═╦═╦═╗");
+                frame.write(width - 35, y - 1, "╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣");
+                frame.write(width - 35, y    , "╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣ ╠═╬═╬═╬═╣");
+                frame.write(width - 35, y + 1, "╠═╬═╬═╬═╣ ╚═╩═╩═╩═╝ ╠═╬═╬═╬═╣ ╚═╩═╩═╩═╝ ╠═╬═╬═╬═╣ ╚═╩═╩═╩═╝ ╠═╬═╬═╬═╣");
+                frame.write(width - 35, y + 2, "╚═╩═╩═╩═╝           ╚═╩═╩═╩═╝           ╚═╩═╩═╩═╝           ╚═╩═╩═╩═╝");
             }
             frame.finish(0.23);
         }
@@ -47,7 +47,6 @@ public class WaffleText {
 
     public static void shakeWaffleText(SignBoard board, int cycles) {
         Random random = new Random();
-        int width = board.getWidth();
         int x = board.getWidth();
         int y = board.getHeight() - 1;
 
@@ -65,7 +64,7 @@ public class WaffleText {
             else
                 frame.setWhite();
 
-            int randX = random.nextInt(80 - 22); // Must subtract length of string to stay in bounds.
+            int randX = random.nextInt(x - 22); // Must subtract length of string to stay in bounds.
             int randY = random.nextInt(6);
 
             // Print "WAFFLES!" at random coordinates.
