@@ -55,7 +55,7 @@ public class Menu {
                 frame.write(x, y + 3, menu7.substring(0, width - x));
             }
 
-            frame.finish(0.03);
+            frame.finish(0.025);
         }
     }
 

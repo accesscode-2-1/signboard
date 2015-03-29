@@ -3,7 +3,9 @@ package nyc.c4q.ac21.signboard;
 import java.util.ArrayList;
 
 /**
- * Created by sufeizhao on 3/29/15.
+ * Created by Sarah on 3/29/15.
+ * FoodToppings.java
+ * ASCII art for food toppings
  */
 public class FoodToppings {
 
@@ -57,7 +59,7 @@ public class FoodToppings {
         chocolate.add("    \\\\'\\__\\'\\__\\'\\__\\ \\__\\'\\_;-----------------`");
         chocolate.add("    \\\\/___\\/___\\/___\\/___\\/ :_________________|");
 
-        int x = board.getWidth() / 5 -5;
+        int x = board.getWidth() / 5 - 4;
         int height;
 
         for (height = 0; height <= board.getHeight(); ++height) {
@@ -227,29 +229,29 @@ public class FoodToppings {
                 continue;
             }
 
-            frame.finish(0.6);
+            frame.finish(0.7);
         }
 
     }
 
     public static void toppingsOneLine(SignBoard board) {
-        int x = board.getWidth() / 5;
+        int width = board.getWidth();
+        int x = board.getWidth() / 5 + 5;
         int y = board.getHeight() / 2;
 
-        for (int i = 0; i < x * 5; i++) {
+        for (int i = 0; i < width; i++) {
             SignBoard.Frame frame = board.newFrame();
 
             frame.setGreen();
-
-            //jam, chicken, ice cream, apple
-            frame.write(x + i, y - 3, "  ___  ___  ___  ___  ___.---------------.".substring(i));
-            frame.write(x + i, y - 2, " .'\\__\\'\\__\\'\\__\\'\\__\\'\\__,`   .  ____ ___ \\".substring(i));
-            frame.write(x + i, y - 1, " \\\\/ __\\/ __\\/ __\\/ __\\/ _:\\   |`.  \\  \\___ \\".substring(i));
-            frame.write(x + i, y,     "  \\\\'\\__\\'\\__\\'\\__\\'\\__\\'\\_`.__|\"\"`. \\  \\___ \\".substring(i));
-            frame.write(x + i, y + 1, "   \\\\/ __\\/ __\\/ __\\/ __\\/ __:                \\".substring(i));
-            frame.write(x + i, y + 2, "    \\\\'\\__\\'\\__\\'\\__\\ \\__\\'\\_;-----------------`".substring(i));
-            frame.write(x + i, y + 3, "     \\\\/___\\/___\\/___\\/___\\/ :_________________|".substring(i));
-
+            if (i<48) {
+                frame.write(x + i, y - 3, "  ___  ___  ___  ___  ___.---------------.      ".substring(i));
+                frame.write(x + i, y - 2, " .'\\__\\'\\__\\'\\__\\'\\__\\'\\__,`   .  ____ ___ \\    ".substring(i));
+                frame.write(x + i, y - 1, " \\\\/ __\\/ __\\/ __\\/ __\\/ _:\\   |`.  \\  \\___ \\   ".substring(i));
+                frame.write(x + i, y,     "  \\\\'\\__\\'\\__\\'\\__\\'\\__\\'\\_`.__|\"\"`. \\  \\___ \\  ".substring(i));
+                frame.write(x + i, y + 1, "   \\\\/ __\\/ __\\/ __\\/ __\\/ __:                \\ ".substring(i));
+                frame.write(x + i, y + 2, "    \\\\'\\__\\'\\__\\'\\__\\ \\__\\'\\_;-----------------`".substring(i));
+                frame.write(x + i, y + 3, "     \\\\/___\\/___\\/___\\/___\\/ :_________________|".substring(i));
+            }
             frame.finish(0.15);
         }
     }

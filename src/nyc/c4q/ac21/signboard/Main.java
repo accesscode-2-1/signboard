@@ -131,21 +131,21 @@ public class Main {
         SignBoard signBoard = new SignBoard(8);
 
         while (true) {
-//            WaffleText.printWaffleDanceScene(signBoard, 6);
-//            WaffleText.shakeWaffleText(signBoard, 10);
-//
-//            Emoji.emoji(signBoard);
-//            Emoji.Jump(signBoard, 40);
-//
-//            Menu.menuScene(signBoard);
-//            Menu.flashApps(signBoard, 2);
-//            Menu.flashChoc(signBoard, 2);
-//            Menu.flashApps(signBoard, 2);
-//            Menu.flashChoc(signBoard, 2);
-//
-//            Price.printAndroid(signBoard);
-//            Price.printPrice(signBoard, 6);
-//            Price.androidLeaving(signBoard);
+            WaffleText.printWaffleDanceScene(signBoard, 6);
+            WaffleText.shakeWaffleText(signBoard, 10);
+
+            Emoji.emoji(signBoard);
+            Emoji.Jump(signBoard, 40);
+
+            Menu.menuScene(signBoard);
+            Menu.flashApps(signBoard, 2);
+            Menu.flashChoc(signBoard, 2);
+            Menu.flashApps(signBoard, 2);
+            Menu.flashChoc(signBoard, 2);
+
+            Price.printAndroid(signBoard);
+            Price.printPrice(signBoard, 6);
+            Price.androidLeaving(signBoard);
 
             FoodToppings.toppings(signBoard);
             FoodToppings.toppingsOneLine(signBoard);
