@@ -30,9 +30,6 @@ public class Main {
             SignBoard.Frame frame = board.newFrame();
 
 
-
-
-
             if (x < 0) {
                 // Scrolling on to the left side.
                 setRandColor(frame);
@@ -108,11 +105,9 @@ public class Main {
         int yOffset = 1;
 
 
-        String cheeseDoodle =  " ■■■  ■    ■■■ ■■■ ■■■ ■■■ ■■■   ■■■   ■■■■ ■■■■ ■■■   ■   ■■■";
+        String cheeseDoodle = " ■■■  ■    ■■■ ■■■ ■■■ ■■■ ■■■   ■■■   ■■■■ ■■■■ ■■■   ■   ■■■";
         String cheeseDoodle1 = " ■    ■ ■■ ■■  ■■  ■■■ ■■■ ■■    ■   ■ ■  ■ ■  ■ ■   ■ ■   ■  ";
         String cheeseDoodle2 = " ■■■  ■  ■ ■■■ ■■■ ■■■ ■■■ ■■■   ■■■   ■■■■ ■■■■ ■■■   ■■■ ■■■";
-
-
 
 
         for (int i = 0; i < cycles; ++i) {
@@ -120,60 +115,33 @@ public class Main {
 
 
             setRandColor(frame);
-            frame.write(x,y,cheeseDoodle);
+            frame.write(x, y, cheeseDoodle);
             setRandColor(frame);
-            frame.write(x,y+1,cheeseDoodle1);
+            frame.write(x, y + 1, cheeseDoodle1);
             setRandColor(frame);
-            frame.write(x,y+2,cheeseDoodle2);
+            frame.write(x, y + 2, cheeseDoodle2);
 
-            y+=yOffset;
-            if(y > 3) {
+            y += yOffset;
+            if (y > 3) {
                 yOffset = -1;
-                y+=yOffset;
+                y += yOffset;
             }
-            if(y < 0) {
+            if (y < 0) {
                 yOffset = 1;
-                y+=yOffset;
+                y += yOffset;
             }
-            x+=xOffset;
-            if(x > width - cheeseDoodle.length()){
+            x += xOffset;
+            if (x > width - cheeseDoodle.length()) {
                 xOffset = -1;
-                x+=xOffset;
+                x += xOffset;
             }
-            if(x < 0){
+            if (x < 0) {
                 xOffset = 1;
-                x+=xOffset;
+                x += xOffset;
             }
 
 
-            frame.finish(0.08);
-        }
-
-    public static void ribbonScene(SignBoard board, int numCycles) {
-        int width = board.getWidth();
-        int height = board.getHeight();
-        for (int i = 0; i < numCycles; ++i) {
-            SignBoard.Frame frame = board.newFrame();
-
-            for (int x = -2; x < width; ++x) {
-                int y = (2 * height - 2 + x + i) % (2 * height - 2);
-                if (y >= height)
-                    y = 2 * height - y - 2;
-                if (0 < x) {
-                    frame.setYellow();
-                    frame.write(x, y, "*");
-                }
-                if (0 < x + 1 && x + 1 < width) {
-                    frame.setGreen();
-                    frame.write(x + 1, y, "*");
-                }
-                if (x + 2 < width) {
-                    frame.setRed();
-                    frame.write(x + 2, y, "*");
-                }
-            }
-
-            frame.finish(0.02);
+            frame.finish(0.06);
         }
     }
 
@@ -254,7 +222,7 @@ public class Main {
                 // Scrolling off the board.
                 frame.write(x, y, text.substring(0, width - x));
 
-            frame.finish(0.08);
+            frame.finish(0.06);
         }
     }
 
